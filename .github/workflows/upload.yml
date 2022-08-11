@@ -27,7 +27,7 @@ jobs:
           cmake --build $GITHUB_WORKSPACE/build -j4 --target install
           ls $GITHUB_WORKSPACE/install
           mkdir bins
-          mv $GITHUB_WORKSPACE/install/* bins/
+          cp -R $GITHUB_WORKSPACE/install/ bins/
       - name: Upload the ecat xml
         uses: actions/upload-artifact@v2
         with:
